@@ -22,4 +22,6 @@ galaxy_info:
   galaxy_tags:
     - system
     - locales
+  dependencies: []
+
 dependencies: []
