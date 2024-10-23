@@ -1,0 +1,25 @@
+---
+galaxy_info:
+  role_name: locales
+  author: moncada
+  description: Apache 2.4 for Linux.
+  company: Socket Sistemas Informáticos Alternativos
+
+  issue_tracker_url: https://github.com/socket-es/locales/issues
+
+  license: license (BSD, MIT)
+  min_ansible_version: "2.4"
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+        - noble
+
+  galaxy_tags:
+    - system
+    - locales
+dependencies: []

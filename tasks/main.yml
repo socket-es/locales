@@ -1,0 +1,30 @@
+---
+
+- name: Get current locales
+  shell: "locale -a"
+  register: current_locales
+
+- name: Ensure locales in /etc/locale.gen
+  lineinfile:
+    path: /etc/locale.gen
+    regexp: "^#? ?{{ item }}"
+    line: "{{ item }}"
+    state: present
+  loop: "{{ locales }}"
+  notify:
+    - Generate locales
+
+- name: Remove unwanted locales from /etc/locale.gen
+  lineinfile:
+    path: /etc/locale.gen
+    regexp: "^#? ?{{ item }}"
+    state: absent
+  loop: "{{ current_locales.stdout_lines | difference(locales) }}"
+
+- name: Set default locale
+  command: "update-locale LANG={{ default_locale }}"
+  register: result
+
+- name: Generate locales
+  ansible.builtin.shell: /usr/sbin/locale-gen
+  when: ( ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian' )

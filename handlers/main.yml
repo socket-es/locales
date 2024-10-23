@@ -1,0 +1,4 @@
+---
+
+- name: Generate locales
+  ansible.builtin.shell: /usr/sbin/locale-gen
