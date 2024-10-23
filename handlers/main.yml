@@ -1,4 +1,10 @@
 ---
 
 - name: Generate locales
-  ansible.builtin.shell: /usr/sbin/locale-gen
+  command: /usr/sbin/locale-gen
+  notify:
+    - Set default locale
+
+- name: Set default locale
+  command: update-locale LANG={{ default_locale }}
+  when: default_locale is defined
