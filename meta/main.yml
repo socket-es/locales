@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: locales
+  namespace: socket_es
   author: moncada
   description: Set locales in Debian like systems.
   company: Socket Sistemas Informáticos Alternativos
