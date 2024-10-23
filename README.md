@@ -10,13 +10,13 @@ None
 
 ### Default locale for system-wide change according to your needs
 
-```
+```yaml
 default_locale: es_ES.UTF-8
 ```
 
 ### Additional locales system-wide change according to your needs
 
-```
+```yaml
 locales:
   - es_ES ISO-8859-1
   - es_ES.UTF-8 UTF-8
@@ -38,6 +38,7 @@ None
   roles:
     - socket_es.locales
 ```
+
 ## License
 
 MIT
