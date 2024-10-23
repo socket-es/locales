@@ -1,4 +1,7 @@
 ---
+
+locales_install: locales
+
 default_locale: es_ES.UTF-8
 
 locales:

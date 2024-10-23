@@ -1,5 +1,11 @@
 ---
 
+- name: Install Locales Packages
+  package:
+    name: "{{ locales_install }}"
+    state: present
+  when: ( ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian' )
+
 - name: Get current locales
   shell: "locale -a"
   register: current_locales
