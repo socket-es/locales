@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: locales
   author: moncada
-  description: Apache 2.4 for Linux.
+  description: Set locales in Debian like systems.
   company: Socket Sistemas Informáticos Alternativos
 
   issue_tracker_url: https://github.com/socket-es/locales/issues
